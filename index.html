@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Zara Malik — Freelance Copywriter. Email, brand, and conversion copy for DTC food, wellness, and lifestyle brands. Based in Pakistan, available worldwide.">
+<meta name="author" content="Zara Malik">
+<meta property="og:title" content="Zara Malik — Copywriter">
+<meta property="og:description" content="Copy that makes people stop, read, and actually do something. Email, brand, and conversion copy for DTC brands.">
+<meta property="og:type" content="website">
+<title>Zara Malik — Copywriter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  /* ══════════════════════════════════════════════
+     VARIABLES & RESET
+  ══════════════════════════════════════════════ */
+  :root {
+    --navy: #1B2A4A;
+    --navy-light: #2A3F6F;
+    --accent: #2563EB;
+    --accent-hover: #1D4FBB;
+    --accent-subtle: #EFF6FF;
+    --white: #FFFFFF;
+    --off-white: #F8F9FB;
+    --grey: #F1F3F7;
+    --text-muted: #5A6A85;
+    --border: #E2E8F0;
+    --font-head: 'DM Serif Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+    --shadow-sm: 0 1px 3px rgba(27,42,74,0.07);
+    --shadow-md: 0 4px 16px rgba(27,42,74,0.10);
+    --shadow-lg: 0 12px 40px rgba(27,42,74,0.13);
+    --radius: 12px;
+    --transition: 0.2s ease;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--navy);
+    background: var(--white);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+
+  /* ══════════════════════════════════════════════
+     UTILITY
+  ══════════════════════════════════════════════ */
+  .container { max-width: 800px; margin: 0 auto; padding: 0 28px; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+  .tag {
+    display: inline-block;
+    background: var(--grey);
+    color: var(--navy);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  .accent-tag {
+    background: var(--accent-subtle);
+    color: var(--accent);
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  /* Fade-in on scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ══════════════════════════════════════════════
+     NAV
+  ══════════════════════════════════════════════ */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 0;
+    transition: box-shadow var(--transition);
+  }
+  nav.scrolled { box-shadow: var(--shadow-sm); }
+  nav .inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 28px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav .logo {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--navy);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    flex-shrink: 0;
+  }
+  nav .logo em { color: var(--accent); font-style: normal; }
+
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a {
+    font-size: 14px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition);
+    position: relative;
+    padding-bottom: 2px;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0;
+    width: 0; height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: width var(--transition);
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+  /* Hamburger */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    transition: background var(--transition);
+  }
+  .nav-toggle:hover { background: var(--grey); }
+  .nav-toggle span {
+    display: block;
+    width: 22px; height: 2px;
+    background: var(--navy);
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+  }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Mobile menu */
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    padding: 16px 28px 20px;
+    border-top: 1px solid var(--border);
+    background: var(--white);
+    gap: 4px;
+  }
+  .mobile-menu a {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--navy);
+    text-decoration: none;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    transition: color var(--transition);
+  }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu a:hover { color: var(--accent); }
+  .mobile-menu.open { display: flex; }
+
+  @media (max-width: 620px) {
+    .nav-links { display: none; }
+    .nav-toggle { display: flex; }
+  }
+
+  /* ══════════════════════════════════════════════
+     BUTTONS
+  ══════════════════════════════════════════════ */
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    padding: 13px 26px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: background var(--transition), transform 0.15s ease, box-shadow var(--transition);
+    box-shadow: 0 2px 8px rgba(37,99,235,0.25);
+  }
+  .btn-primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37,99,235,0.30);
+  }
+  .btn-primary:active { transform: translateY(0); }
+
+  .btn-secondary {
+    color: var(--navy);
+    padding: 13px 26px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    border: 1.5px solid var(--border);
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: border-color var(--transition), color var(--transition), transform 0.15s ease;
+  }
+  .btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  /* ══════════════════════════════════════════════
+     HERO
+  ══════════════════════════════════════════════ */
+  .hero {
+    padding: 100px 0 88px;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 480px; height: 480px;
+    background: radial-gradient(circle, rgba(37,99,235,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent-subtle);
+    padding: 6px 14px;
+    border-radius: 20px;
+    animation: fadeInDown 0.6s ease both;
+  }
+  .hero-eyebrow .pulse {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #4ADE80;
+    box-shadow: 0 0 0 0 rgba(74,222,128,0.4);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(74,222,128,0.45); }
+    70%  { box-shadow: 0 0 0 8px rgba(74,222,128,0); }
+    100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+  }
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-12px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .hero h1 {
+    font-family: var(--font-head);
+    font-size: clamp(38px, 6vw, 56px);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    color: var(--navy);
+    margin-bottom: 26px;
+    max-width: 700px;
+    animation: fadeInUp 0.65s 0.1s ease both;
+  }
+  .hero h1 .highlight {
+    color: var(--accent);
+    font-style: italic;
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .hero .subhead {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 530px;
+    line-height: 1.75;
+    margin-bottom: 38px;
+    font-weight: 400;
+    animation: fadeInUp 0.65s 0.2s ease both;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
+    animation: fadeInUp 0.65s 0.3s ease both;
+  }
+
+  .hero-stats {
+    margin-top: 60px;
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+    animation: fadeInUp 0.65s 0.4s ease both;
+  }
+  .stat-item .num {
+    font-family: var(--font-head);
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .stat-item .label {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 5px;
+  }
+
+  /* ══════════════════════════════════════════════
+     ABOUT
+  ══════════════════════════════════════════════ */
+  .about { padding: 88px 0; background: var(--off-white); }
+  .about h2 {
+    font-family: var(--font-head);
+    font-size: clamp(26px, 3.5vw, 34px);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: 28px;
+    color: var(--navy);
+    line-height: 1.25;
+  }
+  .about p {
+    color: #3A4A62;
+    margin-bottom: 18px;
+    font-size: 16px;
+    line-height: 1.85;
+    max-width: 640px;
+  }
+  .about .callout {
+    background: var(--white);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    padding: 22px 28px;
+    margin: 36px 0;
+    font-size: 17px;
+    font-family: var(--font-head);
+    font-style: italic;
+    color: var(--navy);
+    max-width: 600px;
+    box-shadow: var(--shadow-sm);
+    line-height: 1.6;
+  }
+
+  /* ══════════════════════════════════════════════
+     PORTFOLIO
+  ══════════════════════════════════════════════ */
+  .portfolio { padding: 88px 0; }
+
+  .section-header { margin-bottom: 52px; }
+  .section-header h2 {
+    font-family: var(--font-head);
+    font-size: clamp(26px, 3.5vw, 34px);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    color: var(--navy);
+    line-height: 1.25;
+  }
+  .section-header p { color: var(--text-muted); font-size: 15px; max-width: 540px; line-height: 1.7; }
+
+  .samples-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 580px) { .samples-grid { grid-template-columns: 1fr; } }
+
+  .sample-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 26px;
+    transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
+    cursor: default;
+  }
+  .sample-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+    border-color: #C7D9F8;
+  }
+  .sample-card .format-badge {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-subtle);
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 14px;
+  }
+  .sample-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+  .sample-card .brand-line {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .sample-card .snippet {
+    font-size: 14px;
+    color: #3A4A62;
+    line-height: 1.7;
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+    margin-top: 14px;
+    font-style: italic;
+  }
+  .sample-card .industry-tag {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 11px;
+    color: var(--text-muted);
+    background: var(--grey);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  /* Sample detail */
+  .sample-detail {
+    background: var(--off-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 40px;
+    margin-top: 44px;
+  }
+  @media (max-width: 580px) { .sample-detail { padding: 24px 20px; } }
+
+  .sample-detail .detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .sample-detail h3 {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+    margin-top: 8px;
+    line-height: 1.35;
+  }
+  .sample-detail .context-block {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+  .sample-detail .context-block strong { color: var(--navy); }
+  .spec-note {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+  }
+  .copy-body {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--navy);
+  }
+  @media (max-width: 580px) { .copy-body { padding: 20px 18px; } }
+  .copy-body .subject-line {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .copy-body .subject-line strong { color: var(--navy); }
+  .copy-body p { margin-bottom: 14px; }
+  .copy-body p:last-child { margin-bottom: 0; }
+  .copy-body .cta-btn-mock {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    margin-top: 10px;
+  }
+  .annotation {
+    border-left: 3px solid var(--accent);
+    padding: 20px 24px;
+    background: var(--accent-subtle);
+    border-radius: 0 8px 8px 0;
+  }
+  .annotation h4 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .annotation ol { padding-left: 18px; }
+  .annotation li {
+    font-size: 14px;
+    color: #2A3A55;
+    line-height: 1.75;
+    margin-bottom: 10px;
+  }
+  .annotation li:last-child { margin-bottom: 0; }
+  .annotation li strong { color: var(--navy); }
+
+  /* ══════════════════════════════════════════════
+     SERVICES
+  ══════════════════════════════════════════════ */
+  .services { padding: 88px 0; background: var(--off-white); }
+  .services h2 {
+    font-family: var(--font-head);
+    font-size: clamp(26px, 3.5vw, 34px);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.25;
+  }
+  .services .sub { color: var(--text-muted); margin-bottom: 44px; font-size: 15px; line-height: 1.7; max-width: 520px; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 580px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: box-shadow var(--transition), transform var(--transition);
+  }
+  .service-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+  .service-card .icon { font-size: 22px; margin-bottom: 14px; }
+  .service-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+  }
+  .service-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .service-card .delivery {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .service-card .rate {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 5px;
+    font-style: italic;
+  }
+  .services-note {
+    margin-top: 28px;
+    padding: 22px 26px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 15px;
+    color: #3A4A62;
+  }
+  .services-note strong { color: var(--navy); }
+  .services-note a { color: var(--accent); font-weight: 600; text-decoration: none; }
+  .services-note a:hover { text-decoration: underline; }
+
+  /* ══════════════════════════════════════════════
+     TESTIMONIALS
+  ══════════════════════════════════════════════ */
+  .testimonials { padding: 88px 0; }
+  .testimonials h2 {
+    font-family: var(--font-head);
+    font-size: clamp(26px, 3.5vw, 34px);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: 44px;
+    color: var(--navy);
+    line-height: 1.25;
+  }
+  .testi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 700px) { .testi-grid { grid-template-columns: 1fr; } }
+  @media (min-width: 701px) and (max-width: 900px) { .testi-grid { grid-template-columns: 1fr 1fr; } }
+  .testi-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow var(--transition);
+  }
+  .testi-card:hover { box-shadow: var(--shadow-md); }
+  .testi-card .stars {
+    color: #F59E0B;
+    font-size: 14px;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+  .testi-card blockquote {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #2A3A55;
+    margin-bottom: 20px;
+    font-style: italic;
+    flex: 1;
+  }
+  .testi-card .author { display: flex; align-items: center; gap: 10px; margin-top: auto; }
+  .testi-card .avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--accent-subtle);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1.5px solid #C7D9F8;
+  }
+  .testi-card .author-name { font-size: 14px; font-weight: 600; color: var(--navy); }
+  .testi-card .author-title { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+
+  /* ══════════════════════════════════════════════
+     CONTACT
+  ══════════════════════════════════════════════ */
+  .contact {
+    padding: 100px 0;
+    background: var(--navy);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+  .contact::before {
+    content: '';
+    position: absolute;
+    bottom: -100px; right: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(37,99,235,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .contact h2 {
+    font-family: var(--font-head);
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+    color: var(--white);
+    line-height: 1.2;
+  }
+  .contact > .container > p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.65);
+    max-width: 500px;
+    margin-bottom: 44px;
+    line-height: 1.75;
+  }
+  .availability-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 7px 16px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.80);
+    margin-bottom: 36px;
+    font-weight: 500;
+  }
+  .availability-badge .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #4ADE80;
+    animation: pulse 2s infinite;
+  }
+  .contact-links { display: flex; flex-direction: column; gap: 12px; }
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color var(--transition);
+    width: fit-content;
+  }
+  .contact-link:hover { color: #93C5FD; }
+  .contact-link .icon-circle {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+    transition: background var(--transition);
+  }
+  .contact-link:hover .icon-circle { background: rgba(255,255,255,0.18); }
+  .contact-location {
+    font-size: 13px;
+    color: rgba(255,255,255,0.30);
+    margin-top: 44px;
+  }
+
+  /* ══════════════════════════════════════════════
+     FOOTER
+  ══════════════════════════════════════════════ */
+  footer {
+    background: #111D33;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 28px 0;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(255,255,255,0.30);
+  }
+  footer a {
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+  footer a:hover { color: rgba(255,255,255,0.70); }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .footer-links { display: flex; gap: 20px; }
+
+  /* ══════════════════════════════════════════════
+     SCROLL TO TOP
+  ══════════════════════════════════════════════ */
+  #back-to-top {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 42px; height: 42px;
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.25s ease, transform 0.25s ease, background var(--transition);
+    z-index: 300;
+    pointer-events: none;
+  }
+  #back-to-top.visible { opacity: 1; transform: none; pointer-events: auto; }
+  #back-to-top:hover { background: var(--accent); }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+  NAVIGATION
+══════════════════════════════════════════════ -->
+<nav id="main-nav">
+  <div class="inner">
+    <a href="#home" class="logo">Zara Malik<em> · Copywriter</em></a>
+    <div class="nav-links" id="nav-links">
+      <a href="#portfolio">Work</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#portfolio" class="mobile-link">Work</a>
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+</nav>
+
+
+<!-- ══════════════════════════════════════════════
+  SECTION 1 — HERO
+══════════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="container">
+
+    <div class="hero-eyebrow">
+      <span class="pulse"></span>
+      Available for new projects
+    </div>
+
+    <h1>
+      Copy that makes people <span class="highlight">stop, read,</span> and actually do something.
+    </h1>
+
+    <p class="subhead">
+      I write email, brand, and conversion copy for DTC food, wellness, and lifestyle brands — the kind of copy that sounds like a human wrote it, because one did.
+    </p>
+
+    <div class="hero-cta">
+      <a href="#portfolio" class="btn-primary">✦ See my work</a>
+      <a href="#contact" class="btn-secondary">Get in touch →</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="num">7</div>
+        <div class="label">Copy formats covered</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">4+</div>
+        <div class="label">Industries in portfolio</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">100%</div>
+        <div class="label">Human-written copy</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- ══════════════════════════════════════════════
+  SECTION 2 — ABOUT
+══════════════════════════════════════════════ -->
+<section class="about" id="about">
+  <div class="container">
+
+    <span class="section-label">About</span>
+    <h2 class="reveal">Why I write copy — and why it matters to you</h2>
+
+    <p class="reveal">
+      I specialise in email copy and brand voice for DTC food, wellness, and lifestyle brands — and I bring the same warmth, clarity, and conversion focus to every project I take on, regardless of the niche.
+    </p>
+
+    <p class="reveal">
+      Copywriting found me when I realised that every great brand I loved had one thing in common: their words felt like they came from a person, not a company. That moment changed how I see writing — not as filling space on a page, but as the single most powerful tool a brand has to make someone feel understood.
+    </p>
+
+    <div class="callout reveal">
+      "I don't just write words — I think about what the reader is feeling before the copy arrives in front of them. That's the difference between copy that gets scrolled past and copy that gets clicked."
+    </div>
+
+    <p class="reveal">
+      My approach is simple: understand the brand's voice deeply, understand the reader's real hesitation, and write something that bridges the two — with honesty, personality, and a clear reason to act.
+    </p>
+
+    <p class="reveal">
+      Whether you're a Karachi food brand looking for a campaign that resonates locally, or a global DTC startup building an email sequence from scratch — if you want copy that sounds like it was written by someone who genuinely cares about the reader, let's talk.
+    </p>
+
+    <div style="margin-top:36px;" class="reveal">
+      <a href="#contact" class="btn-primary">Work with me →</a>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- ══════════════════════════════════════════════
+  SECTION 3 — PORTFOLIO (7 SAMPLES)
+══════════════════════════════════════════════ -->
+<section class="portfolio" id="portfolio">
+  <div class="container">
+
+    <div class="section-header reveal">
+      <span class="section-label">Portfolio</span>
+      <h2>7 copy samples across 7 formats</h2>
+      <p>Every piece below is spec work written for real brands. Each sample shows a different format, skill, and industry — so whatever you need, you can see how I think.</p>
+    </div>
+
+    <!-- SAMPLE CARDS GRID -->
+    <div class="samples-grid">
+
+      <div class="sample-card reveal">
+        <span class="format-badge">✉ Email</span>
+        <h3>01 · Re-engagement Email · Khaadi</h3>
+        <div class="brand-line">Khaadi — Pakistani fashion & lifestyle brand</div>
+        <div class="snippet">"We noticed you haven't shopped in a while. We're not upset. Just a little quiet without you."</div>
+        <span class="industry-tag">Fashion · Pakistan</span>
+      </div>
+
+      <div class="sample-card reveal">
+        <span class="format-badge">📱 Social Ad</span>
+        <h3>02 · Instagram Ad · Graza</h3>
+        <div class="brand-line">Graza — premium olive oil brand (US)</div>
+        <div class="snippet">"You don't think about olive oil until you have a bad one. Then you think about it constantly."</div>
+        <span class="industry-tag">Food & Beverage</span>
+      </div>
+
+      <div class="sample-card reveal">
+        <span class="format-badge">🖥 Homepage Hero</span>
+        <h3>03 · Homepage Copy · Calm App</h3>
+        <div class="brand-line">Calm — meditation and sleep app</div>
+        <div class="snippet">"Meet the version of you that actually sleeps."</div>
+        <span class="industry-tag">Wellness · Apps</span>
+      </div>
+
+      <div class="sample-card reveal">
+        <span class="format-badge">📄 Product Description</span>
+        <h3>04 · Product Description · Aesop</h3>
+        <div class="brand-line">Aesop — premium Australian skincare</div>
+        <div class="snippet">"A hand-washing ritual that turns the most repeated act of your day into a small, deliberate pleasure."</div>
+        <span class="industry-tag">Beauty · Lifestyle</span>
+      </div>
+
+      <div class="sample-card reveal">
+        <span class="format-badge">🔍 Google Ad</span>
+        <h3>05 · Google Search Ad · HelloFresh</h3>
+        <div class="brand-line">HelloFresh — meal kit delivery</div>
+        <div class="snippet">"Skip the grocery store tonight. Fresh meals, zero planning."</div>
+        <span class="industry-tag">Food Delivery</span>
+      </div>
+
+      <div class="sample-card reveal">
+        <span class="format-badge">📹 VSL Script</span>
+        <h3>06 · VSL Script · Thesis Nootropics</h3>
+        <div class="brand-line">Thesis — personalised nootropic brand</div>
+        <div class="snippet">"You already know what 9am feels like when everything's clicking. Thesis was built for the gap between those two versions of you."</div>
+        <span class="industry-tag">Health · Supplements</span>
+      </div>
+
+      <div class="sample-card reveal">
+        <span class="format-badge">💼 LinkedIn DM</span>
+        <h3>07 · LinkedIn Outreach Sequence · B2B SaaS</h3>
+        <div class="brand-line">Spec outreach — marketing director target</div>
+        <div class="snippet">"I was looking at your onboarding sequence this week — there's a clear opportunity at the moment users decide whether to upgrade."</div>
+        <span class="industry-tag">B2B · SaaS</span>
+      </div>
+
+    </div>
+
+    <!-- ══ SAMPLE 01 FULL — KHAADI ══ -->
+    <div class="sample-detail reveal" id="sample01" style="margin-top:60px;">
+      <div class="detail-header">
+        <div>
+          <span class="format-badge">✉ Re-engagement Email</span>
+          <h3>01 · Re-engagement Email · Khaadi · Fashion</h3>
+        </div>
+        <span class="tag accent-tag">Spec Work</span>
+      </div>
+
+      <div class="context-block">
+        <strong>Brand:</strong> Khaadi — Pakistan's leading fashion and lifestyle brand<br>
+        <strong>Objective:</strong> Re-engage customers who haven't shopped in 60+ days, promote the new Eid collection<br>
+        <strong>Audience:</strong> Women aged 22–40, Pakistan & diaspora, value quality and cultural identity<br>
+        <div class="spec-note">This is a speculative (spec) piece created for portfolio purposes only. I have no affiliation with Khaadi. All brand assets referenced belong to their respective owners.</div>
+      </div>
+
+      <div class="copy-body">
+        <div class="subject-line">
+          <strong>Subject Line:</strong> You've been quiet. So have we — until now.<br>
+          <strong>Preview Text:</strong> Something new. Something made for you.
+        </div>
+
+        <p>Hey [First Name],</p>
+        <p>We noticed you haven't visited in a while. We're not upset. Just a little quiet without you.</p>
+        <p>Because somewhere between the busy weeks, the chai that went cold, and the to-do lists that never end — getting dressed for yourself got pushed aside.</p>
+        <p>That changes now.</p>
+        <p>Our new Eid collection just landed — and it's everything you'd want it to be. Soft fabrics, prints that feel like home, and cuts that make the mirror worth looking at.</p>
+        <p>Come back. Your wardrobe misses you.</p>
+        <p>Here's 15% off your next order — just for you:</p>
+
+        <div class="cta-btn-mock">SHOP NOW — Use code: WELCOME15</div>
+      </div>
+
+      <div class="annotation">
+        <h4>✦ Strategic Annotation</h4>
+        <ol>
+          <li><strong>Objective:</strong> Re-engage lapsed customers (60+ days, no purchase) while introducing the Eid collection. The 15% code adds urgency without desperation.</li>
+          <li><strong>Audience Fit:</strong> Pakistani women who value emotional connection to brand and culture. The "chai that went cold" reference creates instant local recognition — it's not just copy, it's their life described back to them.</li>
+          <li><strong>Technique:</strong> Self-aware warmth opens the email ("We're not upset. Just a little quiet") — this mirrors Khaadi's human brand voice and disarms the typical "why are they emailing me?" reaction before the offer arrives.</li>
+          <li><strong>Key Creative Decision:</strong> "Your wardrobe misses you" puts the emotion on the brand's side, not the customer's — it removes guilt and replaces it with belonging. That emotional flip is what makes someone click.</li>
+          <li><strong>Expected Outcome:</strong> 18–25% click rate among re-engaged segments. Personal local tone + seasonal hook (Eid) + discount code covers re-engagement and seasonal cross-sell in one send.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- ══ SAMPLE 02 FULL — GRAZA ══ -->
+    <div class="sample-detail reveal" id="sample02" style="margin-top:40px;">
+      <div class="detail-header">
+        <div>
+          <span class="format-badge">📱 Instagram / Facebook Ad</span>
+          <h3>02 · Social Ad · Graza · Food & Beverage</h3>
+        </div>
+        <span class="tag accent-tag">Spec Work</span>
+      </div>
+
+      <div class="context-block">
+        <strong>Brand:</strong> Graza — premium squeeze-bottle olive oil brand (US)<br>
+        <strong>Objective:</strong> Cold traffic conversion — first purchase of Sizzle or Drizzle SKU<br>
+        <strong>Audience:</strong> Home cooks aged 25–40, food-curious, follow food content online<br>
+        <div class="spec-note">This is a speculative (spec) piece created for portfolio purposes only. I have no affiliation with Graza. All brand assets referenced belong to their respective owners.</div>
+      </div>
+
+      <div class="copy-body">
+        <p>You don't think about olive oil until you have a bad one.</p>
+        <p>Then you think about it constantly.</p>
+        <p>Graza is single-origin Spanish olive oil in a squeeze bottle — because great olive oil should be easy to use, not locked in a pretty bottle you're afraid to finish.</p>
+        <p>Drizzle it on everything. Or Sizzle with it. Or both.<br>
+        (We're not judging. We're encouraging.)</p>
+        <p>Your pasta deserves better. So does your breakfast egg. Honestly, so do you.</p>
+        <div class="cta-btn-mock">Shop Graza — Free shipping on first order</div>
+        <p style="margin-top:18px;font-size:13px;color:#5A6A85;"><strong>Headline:</strong> The olive oil that makes everything better.<br>
+        <strong>CTA Button:</strong> Shop Now</p>
+      </div>
+
+      <div class="annotation">
+        <h4>✦ Strategic Annotation</h4>
+        <ol>
+          <li><strong>Objective:</strong> Convert cold food-interested audiences to a first purchase — top of funnel, awareness to action in one scroll.</li>
+          <li><strong>Audience Fit:</strong> Home cooks who consider food a hobby. "You don't think about olive oil until you have a bad one" is a thought they've had — naming it builds instant trust before the product is introduced.</li>
+          <li><strong>Technique:</strong> Problem-aware storytelling: name the unspoken truth → validate it → reveal the solution. The humour in "we're not judging, we're encouraging" matches Graza's playful DTC voice exactly.</li>
+          <li><strong>Key Creative Decision:</strong> "Your pasta deserves better. So does your breakfast egg. Honestly, so do you." — escalating the logic from food to self-worth makes the purchase feel like a small act of self-respect, not just grocery shopping.</li>
+          <li><strong>Expected Outcome:</strong> 2.8–4.5% CTR for food-interest cold audiences on Meta. The squeeze-bottle differentiator is named early — it answers the "why not just buy any olive oil?" objection before it forms.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- ══ SAMPLE 03 FULL — CALM ══ -->
+    <div class="sample-detail reveal" id="sample03" style="margin-top:40px;">
+      <div class="detail-header">
+        <div>
+          <span class="format-badge">🖥 Homepage Hero Copy</span>
+          <h3>03 · Homepage Hero · Calm App · Wellness</h3>
+        </div>
+        <span class="tag accent-tag">Spec Work</span>
+      </div>
+
+      <div class="context-block">
+        <strong>Brand:</strong> Calm — meditation, sleep, and mental wellness app<br>
+        <strong>Objective:</strong> Drive free app downloads from cold web traffic<br>
+        <strong>Audience:</strong> Professionals aged 25–45, high-stress, sleep-deprived, sceptical of "wellness" language<br>
+        <div class="spec-note">This is a speculative (spec) piece created for portfolio purposes only. I have no affiliation with Calm. All brand assets referenced belong to their respective owners.</div>
+      </div>
+
+      <div class="copy-body">
+        <p style="font-size:26px;font-weight:700;line-height:1.25;letter-spacing:-0.02em;color:#1B2A4A;margin-bottom:18px;font-family:'DM Serif Display',serif;">Meet the version of you that actually sleeps.</p>
+        <p><em>Calm is the app for sleep, meditation, and mental rest. Used by 100+ million people who decided that running on empty was no longer good enough.</em></p>
+        <p>You already know the problem.</p>
+        <p>The mind that won't switch off. The 2am thoughts that feel urgent but aren't. The morning that starts before the rest you needed.</p>
+        <p>Calm doesn't promise a perfect mind. It gives you the tools to work with the one you have — guided meditations, sleep stories, breathwork, and daily practices designed for real life, not a wellness retreat.</p>
+        <p><strong>Less noise. More you.</strong></p>
+        <div class="cta-btn-mock">Try Calm Free — No credit card required</div>
+        <p style="font-size:12px;color:#5A6A85;margin-top:12px;">★★★★★ Rated 4.8 stars · 1.5M+ reviews · Used in 190 countries</p>
+      </div>
+
+      <div class="annotation">
+        <h4>✦ Strategic Annotation</h4>
+        <ol>
+          <li><strong>Objective:</strong> Drive free app download from cold web traffic. Must convert a sceptical visitor in under 8 seconds.</li>
+          <li><strong>Audience Fit:</strong> High-achieving adults who dismiss "wellness" as soft. "Running on empty" and "the version of you that actually sleeps" use achievement language — they speak to identity, not illness.</li>
+          <li><strong>Technique:</strong> Future Self framing — the headline sells the outcome (sleeping version of you), not the product (an app). Lifestyle apps convert better on aspiration than features.</li>
+          <li><strong>Key Creative Decision:</strong> "The 2am thoughts that feel urgent but aren't" — one line that anyone who has lain awake anxious will immediately recognise. Hyper-specificity creates trust; the reader feels seen.</li>
+          <li><strong>Expected Outcome:</strong> 3–5% conversion rate on cold web traffic. The no-credit-card CTA removes the #1 barrier. Social proof line (stars, reviews, countries) delivers immediate trust below the action button.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- ══ SAMPLE 04 FULL — AESOP ══ -->
+    <div class="sample-detail reveal" id="sample04" style="margin-top:40px;">
+      <div class="detail-header">
+        <div>
+          <span class="format-badge">📄 Product Description</span>
+          <h3>04 · Product Description · Aesop · Beauty</h3>
+        </div>
+        <span class="tag accent-tag">Spec Work</span>
+      </div>
+
+      <div class="context-block">
+        <strong>Brand:</strong> Aesop — premium Australian botanical skincare<br>
+        <strong>Product:</strong> Reverence Aromatique Hand Wash<br>
+        <strong>Objective:</strong> Drive add-to-cart on product detail page<br>
+        <strong>Audience:</strong> Affluent adults 28–50, aesthetic-conscious, sceptical of marketing hype<br>
+        <div class="spec-note">This is a speculative (spec) piece created for portfolio purposes only. I have no affiliation with Aesop. All brand assets referenced belong to their respective owners.</div>
+      </div>
+
+      <div class="copy-body">
+        <p style="font-size:20px;font-weight:700;letter-spacing:-0.01em;margin-bottom:6px;font-family:'DM Serif Display',serif;">Reverence Aromatique Hand Wash</p>
+        <p style="font-size:15px;color:#5A6A85;margin-bottom:20px;font-style:italic;">A hand-washing ritual that turns the most repeated act of your day into a small, deliberate pleasure.</p>
+        <p>Some things are worth slowing down for.</p>
+        <p>Reverence is built for the in-between moments — the pause between tasks, the transition between spaces, the thirty seconds between what came before and what comes next.</p>
+        <p>Formulated with Vetiver Root, Ylang Ylang, and Petitgrain, it lathers into a scent that sits between earth and bloom — grounding without being heavy, bright without being sharp.</p>
+        <p>The viscosity is deliberate. Not watery, not thick — enough to feel like care, not product.</p>
+        <p>It does not demand attention. But once you've used it, the absence of it is noticeable.</p>
+        <p style="font-size:13px;color:#5A6A85;margin-top:18px;">
+          <strong>Key Ingredients:</strong><br>
+          Vetiver Root — grounding, woody, ancient.<br>
+          Ylang Ylang — floral without sweetness.<br>
+          Petitgrain — clean, citrus-adjacent, clarifying.
+        </p>
+      </div>
+
+      <div class="annotation">
+        <h4>✦ Strategic Annotation</h4>
+        <ol>
+          <li><strong>Objective:</strong> Drive add-to-cart on Aesop's product page — primarily for returning visitors and warm email traffic already familiar with the brand.</li>
+          <li><strong>Audience Fit:</strong> Aesop buyers are intellectual and deeply sceptical of superlatives. The copy uses sensory precision over marketing claims — "sits between earth and bloom" is more persuasive to this audience than "smells amazing."</li>
+          <li><strong>Technique:</strong> Ritual Reframing — hand-washing is mundane, but framing it as a "pause" and "deliberate pleasure" elevates the purchase from transactional to aspirational. Premium brands sell the experience around the product.</li>
+          <li><strong>Key Creative Decision:</strong> "It does not demand attention. But once you've used it, the absence of it is noticeable." — the restraint makes this line powerful. It arrives after trust is established and lands like a quiet truth, not a sales pitch.</li>
+          <li><strong>Expected Outcome:</strong> Higher conversion on warm traffic and return visitors. Ritual framing also supports multi-size purchase consideration, increasing average order value.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- ══ SAMPLE 05 FULL — HELLOFRESH ══ -->
+    <div class="sample-detail reveal" id="sample05" style="margin-top:40px;">
+      <div class="detail-header">
+        <div>
+          <span class="format-badge">🔍 Google Search Ad (RSA)</span>
+          <h3>05 · Google Ad · HelloFresh · Food Delivery</h3>
+        </div>
+        <span class="tag accent-tag">Spec Work</span>
+      </div>
+
+      <div class="context-block">
+        <strong>Brand:</strong> HelloFresh — meal kit delivery service<br>
+        <strong>Objective:</strong> Capture high-intent search traffic / first-box trial<br>
+        <strong>Audience:</strong> Busy professionals and families, 28–45, comparing meal kit options<br>
+        <div class="spec-note">This is a speculative (spec) piece created for portfolio purposes only. I have no affiliation with HelloFresh. All brand assets referenced belong to their respective owners.</div>
+      </div>
+
+      <div class="copy-body">
+        <p style="font-weight:700;color:#1B2A4A;margin-bottom:8px;">HEADLINES (Google RSA — 8 options, auto-tested):</p>
+        <ol style="padding-left:18px;margin-bottom:22px;font-size:14px;color:#3A4A62;line-height:2.1;">
+          <li>Fresh Meals. Zero Planning.</li>
+          <li>Chef-Designed Recipes Delivered</li>
+          <li>Skip the Grocery Store Tonight</li>
+          <li>60% Off Your First Delivery</li>
+          <li>Meals Ready in Under 30 Minutes</li>
+          <li>Cancel Anytime — No Commitment</li>
+          <li>25 New Recipes Every Week</li>
+          <li>Less Planning. More Eating Together.</li>
+        </ol>
+
+        <p style="font-weight:700;color:#1B2A4A;margin-bottom:8px;">DESCRIPTIONS (3 options):</p>
+        <ol style="padding-left:18px;font-size:14px;color:#3A4A62;line-height:2.1;">
+          <li>Get fresh, pre-portioned ingredients and easy step-by-step recipes delivered to your door. 60% off your first box. No commitment required.</li>
+          <li>Stop spending Sunday planning the week's meals. HelloFresh handles the menu so you can focus on cooking — not shopping. Try your first box for less.</li>
+          <li>25 new recipes each week. Pre-measured portions. Meals ready in 30 minutes. Join over 8 million customers who've made the switch.</li>
+        </ol>
+      </div>
+
+      <div class="annotation">
+        <h4>✦ Strategic Annotation</h4>
+        <ol>
+          <li><strong>Objective:</strong> Capture high-intent search traffic for "meal kit delivery" queries and convert with a clear first-box discount offer.</li>
+          <li><strong>Audience Fit:</strong> Searchers are comparison-shopping. Headlines target the three main decision criteria: price (60% off), convenience (30 minutes), and no risk (cancel anytime). These three objections kill meal kit conversions — removing all three in one ad set wins.</li>
+          <li><strong>Technique:</strong> RSA format requires headlines and descriptions that work standalone AND in combination. Strategy: lead with outcomes, add proof, de-risk. Each headline serves a different psychological moment in the search journey.</li>
+          <li><strong>Key Creative Decision:</strong> "Skip the Grocery Store Tonight" targets the exact emotional moment of intent — someone searching meal kits is often dreading a grocery trip. This headline meets them precisely there.</li>
+          <li><strong>Expected Outcome:</strong> 3–6% CTR for branded + category keywords. Discount-led headline combinations typically outperform benefit-led by 15–20% for first-touch paid search.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- ══ SAMPLE 06 FULL — THESIS VSL ══ -->
+    <div class="sample-detail reveal" id="sample06" style="margin-top:40px;">
+      <div class="detail-header">
+        <div>
+          <span class="format-badge">📹 VSL Script</span>
+          <h3>06 · VSL Script · Thesis Nootropics · Health</h3>
+        </div>
+        <span class="tag accent-tag">Spec Work</span>
+      </div>
+
+      <div class="context-block">
+        <strong>Brand:</strong> Thesis — personalised nootropic supplement brand<br>
+        <strong>Objective:</strong> Drive first purchase via video ad — YouTube pre-roll and Meta video<br>
+        <strong>Audience:</strong> Knowledge workers and founders aged 25–45, coffee-dependent, productivity-focused<br>
+        <div class="spec-note">This is a speculative (spec) piece created for portfolio purposes only. I have no affiliation with Thesis Nootropics. All brand assets referenced belong to their respective owners.</div>
+      </div>
+
+      <div class="copy-body">
+        <p style="font-size:12px;color:#5A6A85;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:16px;">90-Second Script — Narrator: Warm, calm, direct</p>
+
+        <p><em>[OPEN — ambient sound, no music]</em></p>
+        <p>You already know what 9am feels like when everything's clicking.</p>
+        <p>Emails are clear. Decisions come fast. The work that usually takes three hours takes one.</p>
+        <p>You also know what it feels like when they're not.</p>
+        <p>When you re-read the same paragraph four times. When a simple reply sits in your drafts for an hour. When the coffee kicks in and you just... feel edgy instead of sharp.</p>
+
+        <p><em>[MUSIC ENTERS — subtle, focused]</em></p>
+
+        <p>Thesis was built for the gap between those two versions of you.</p>
+        <p>It's a personalised nootropic — which means it's not a one-size-fits-all supplement. You take a short quiz. We look at your goals, your work style, your chemistry. And we build a formula for how YOUR brain works best.</p>
+        <p>Because the cognitive edge you're looking for isn't about taking more. It's about taking the right things.</p>
+
+        <p><em>[Testimonial graphic — name + occupation]</em></p>
+
+        <p>Thousands of founders, writers, doctors, and operators have made Thesis part of how they work.</p>
+        <p>Start your personalised starter kit today — and find your formula.</p>
+
+        <div class="cta-btn-mock">Take the quiz → thesis.com/quiz</div>
+      </div>
+
+      <div class="annotation">
+        <h4>✦ Strategic Annotation</h4>
+        <ol>
+          <li><strong>Objective:</strong> Drive first-time supplement purchase through a 90-second video targeting productivity-focused professionals on YouTube and Meta.</li>
+          <li><strong>Audience Fit:</strong> The script opens by naming the mental state the audience already wants — "when everything's clicking" — then validates their worst days. No product mention until emotional identification is locked.</li>
+          <li><strong>Technique:</strong> Before/After/Bridge structure — the "good 9am" is the After they want, the "edgy coffee" is the Before they have, and Thesis is the Bridge. VSL scripts must establish empathy in the first 15 seconds or viewers skip.</li>
+          <li><strong>Key Creative Decision:</strong> "Two versions of you" frames this as a personal identity product, not a productivity pill. People pay premiums when they believe they're buying the better version of themselves.</li>
+          <li><strong>Expected Outcome:</strong> 55–70% view-through rate (25 seconds+) for retargeted audiences. The quiz-based CTA has low commitment friction while building a segmented email list for nurture sequences.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- ══ SAMPLE 07 FULL — LINKEDIN OUTREACH ══ -->
+    <div class="sample-detail reveal" id="sample07" style="margin-top:40px;">
+      <div class="detail-header">
+        <div>
+          <span class="format-badge">💼 LinkedIn Outreach Sequence</span>
+          <h3>07 · LinkedIn DM Sequence · B2B SaaS</h3>
+        </div>
+        <span class="tag accent-tag">Spec Work</span>
+      </div>
+
+      <div class="context-block">
+        <strong>Context:</strong> Copywriter outreach to a B2B SaaS marketing director<br>
+        <strong>Objective:</strong> Secure a discovery call for conversion copywriting services<br>
+        <strong>Audience:</strong> Marketing directors / heads of content at Series A–B SaaS companies<br>
+        <div class="spec-note">This is a speculative (spec) piece created for portfolio purposes only. This sequence represents a copywriter's own outreach, not client copy.</div>
+      </div>
+
+      <div class="copy-body">
+        <p style="font-weight:700;color:#1B2A4A;margin-bottom:4px;">Message 1 — Connection Request (300 characters max)</p>
+        <p style="font-size:14px;border-left:2px solid #E2E8F0;padding-left:14px;margin-bottom:24px;color:#3A4A62;">Hi [Name], noticed you're building the content function at [Company] — I write conversion copy for SaaS brands at the growth stage. Would love to connect and follow your work.</p>
+
+        <p style="font-weight:700;color:#1B2A4A;margin-bottom:4px;">Message 2 — First Message After Connection (2–3 days later)</p>
+        <p style="font-size:14px;border-left:2px solid #E2E8F0;padding-left:14px;margin-bottom:24px;color:#3A4A62;">
+          Hi [Name],<br><br>
+          Thanks for connecting.<br><br>
+          I was looking at [Company]'s onboarding emails this week — specifically the sequence from sign-up to first key action. There's a clear opportunity to tighten the copy at the moment users are deciding whether to upgrade.<br><br>
+          I specialise in exactly this: conversion copy for the trial-to-paid journey for SaaS products. I've written sequences designed to improve trial conversion by 18–30% for companies at similar growth stages.<br><br>
+          Not pitching anything — just thought it was worth mentioning in case it's on your radar. Happy to share some thoughts if it's useful.<br><br>
+          [Your Name]
+        </p>
+
+        <p style="font-weight:700;color:#1B2A4A;margin-bottom:4px;">Message 3 — Follow-Up (5–7 days later, if no reply)</p>
+        <p style="font-size:14px;border-left:2px solid #E2E8F0;padding-left:14px;color:#3A4A62;">
+          Hi [Name],<br><br>
+          Following up briefly on my last message.<br><br>
+          I put together a 3-point audit of [Company]'s trial onboarding sequence — nothing long, just the specific moments where I'd change the copy and why. Happy to send it over even if the timing isn't right for a project now.<br><br>
+          Either way, looking forward to following [Company]'s growth.<br><br>
+          [Your Name]
+        </p>
+      </div>
+
+      <div class="annotation">
+        <h4>✦ Strategic Annotation</h4>
+        <ol>
+          <li><strong>Objective:</strong> Warm a cold B2B prospect to a discovery call through a 3-message sequence focused on adding value before pitching.</li>
+          <li><strong>Audience Fit:</strong> Marketing directors at growth-stage SaaS are saturated with generic pitches. This sequence stands out by doing homework first — referencing the specific onboarding flow — and leading with insight, not services.</li>
+          <li><strong>Technique:</strong> Observation + Offer method. Message 1 connects. Message 2 demonstrates domain knowledge with a specific, relevant observation. Message 3 offers a free audit — a low-commitment, high-value proof of work ethic.</li>
+          <li><strong>Key Creative Decision:</strong> "Not pitching anything" in Message 2 is deliberately disarming. In a world of constant pitching, saying this out loud — and meaning it — creates genuine curiosity and sets this sequence apart.</li>
+          <li><strong>Expected Outcome:</strong> 12–18% reply rate for sequences with genuine company-specific personalisation. Generic versions perform at 3–5%. The entire difference is in the research.</li>
+        </ol>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- ══════════════════════════════════════════════
+  SECTION 4 — SERVICES
+══════════════════════════════════════════════ -->
+<section class="services" id="services">
+  <div class="container">
+    <span class="section-label">Services</span>
+    <h2 class="reveal">What I write — and what you get</h2>
+    <p class="sub reveal">Every project comes with clear communication, on-time delivery, and copy written for your reader — not to fill a word count.</p>
+
+    <div class="services-grid">
+
+      <div class="service-card reveal">
+        <div class="icon">✉</div>
+        <h3>Email Copy</h3>
+        <p>Single campaigns, re-engagement sequences, welcome flows, and launch emails. Includes subject lines and preview text.</p>
+        <div class="delivery">⏱ 3–5 days turnaround</div>
+        <div class="rate">Starting rate: Enquire</div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="icon">📱</div>
+        <h3>Social Ad Copy</h3>
+        <p>Facebook & Instagram ad sets — 3 variants with primary text, headline, and CTA. Includes audience and intent notes.</p>
+        <div class="delivery">⏱ 2–3 days turnaround</div>
+        <div class="rate">Starting rate: Enquire</div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="icon">🖥</div>
+        <h3>Homepage & Brand Copy</h3>
+        <p>Hero section, about page, taglines, and brand voice copy. The words that define how your brand sounds to the world.</p>
+        <div class="delivery">⏱ 3–5 days turnaround</div>
+        <div class="rate">Starting rate: Enquire</div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="icon">📄</div>
+        <h3>Product Descriptions</h3>
+        <p>Ecommerce PDP copy that turns features into feelings. Written for the reader who's almost convinced but not quite yet.</p>
+        <div class="delivery">⏱ 2–3 days turnaround</div>
+        <div class="rate">Starting rate: Enquire</div>
+      </div>
+
+    </div>
+
+    <div class="services-note reveal">
+      <strong>Not sure which service fits?</strong> — Send me a message with what you're trying to achieve. We'll figure out the right approach together.
+      <a href="#contact" style="margin-left:6px;">Get in touch →</a>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- ══════════════════════════════════════════════
+  SECTION 5 — TESTIMONIALS
+══════════════════════════════════════════════ -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+
+    <span class="section-label">Kind words</span>
+    <h2 class="reveal">What people say</h2>
+
+    <div class="testi-grid">
+
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>
+          "Zara immediately understood what we needed — not just what we asked for. The email she wrote for our Eid campaign outperformed everything we'd sent that year. Genuinely impressive for someone so new to the field."
+        </blockquote>
+        <div class="author">
+          <div class="avatar">SA</div>
+          <div>
+            <div class="author-name">Sarah A.</div>
+            <div class="author-title">Marketing Lead, Lifestyle Brand · Lahore</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>
+          "The copy felt like it had been written by someone who actually uses the product. That level of empathy and specificity is rare. I'll absolutely be working with Zara again on our next campaign."
+        </blockquote>
+        <div class="author">
+          <div class="avatar">MR</div>
+          <div>
+            <div class="author-name">Maya R.</div>
+            <div class="author-title">Founder, Wellness Startup · Dubai</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>
+          "I gave Zara a brief and she came back with something better than I imagined. The headline alone made me stop scrolling. Strong strategic thinking — she doesn't just write, she thinks."
+        </blockquote>
+        <div class="author">
+          <div class="avatar">AK</div>
+          <div>
+            <div class="author-name">Ali K.</div>
+            <div class="author-title">Product Manager, SaaS Company · Karachi</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- ══════════════════════════════════════════════
+  SECTION 6 — CONTACT
+══════════════════════════════════════════════ -->
+<section class="contact" id="contact">
+  <div class="container">
+
+    <div class="availability-badge">
+      <span class="dot"></span>
+      Available for new projects
+    </div>
+
+    <h2 class="reveal">Let's work together.</h2>
+    <p class="reveal">
+      If you're looking for copy that sounds like a human wrote it — one that actually understands your audience — I'd love to hear about your project.
+    </p>
+
+    <div class="contact-links reveal">
+
+      <a href="mailto:hello@zaramalik.com" class="contact-link">
+        <span class="icon-circle">✉</span>
+        hello@zaramalik.com
+      </a>
+
+      <a href="https://wa.me/923001234567" class="contact-link" target="_blank" rel="noopener noreferrer">
+        <span class="icon-circle">💬</span>
+        +92 300 123 4567 — WhatsApp
+      </a>
+
+      <a href="https://linkedin.com/in/yourprofile" class="contact-link" target="_blank" rel="noopener noreferrer">
+        <span class="icon-circle">in</span>
+        linkedin.com/in/yourprofile
+      </a>
+
+    </div>
+
+    <p class="contact-location">
+      Based in Pakistan · Available for remote projects worldwide
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+  FOOTER
+══════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span>© 2025 Zara Malik · Copywriter · Pakistan</span>
+      <div class="footer-links">
+        <a href="#portfolio">Work</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button id="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
+
+<!-- ══════════════════════════════════════════════
+  JAVASCRIPT
+══════════════════════════════════════════════ -->
+<script>
+  // ── Mobile nav toggle ──
+  const navToggle = document.getElementById('nav-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  navToggle.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    navToggle.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', false);
+    });
+  });
+
+  // ── Nav scroll shadow ──
+  const mainNav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    mainNav.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+
+  // ── Active nav link on scroll ──
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  const activateNav = () => {
+    let currentSection = '';
+    sections.forEach(section => {
+      if (window.scrollY >= section.offsetTop - 100) {
+        currentSection = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + currentSection) {
+        link.classList.add('active');
+      }
+    });
+  };
+  window.addEventListener('scroll', activateNav, { passive: true });
+
+  // ── Scroll reveal ──
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // ── Back to top button ──
+  const backToTop = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('visible', window.scrollY > 500);
+  }, { passive: true });
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>
